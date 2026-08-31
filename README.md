@@ -33,7 +33,7 @@ plugins:
 
 | Option        | Type                         | Default                                                          | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | ------------- | ---------------------------- | ---------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `accentColor` | `string \| [string, string]` | `"blue"`                                                         | The **theme's own default**, normally passed by the bundling theme's `mod.ts` rather than set here directly. A site overrides it via `themeConfig.accentColor`. Single value applies to both light and dark mode; a 2-item array sets them independently — light and dark may each use a different format. Each item is a preset name, or a raw color in `#hex` (3/4/6/8-digit), `rgb()`/`rgba()`, or `hsl()`/`hsla()` form (including the modern space-separated syntax, e.g. `hsl(210 80% 55% / 50%)`). |
+| `accentColor` | `string \| [string, string]` | `"blue"`                                                         | The **theme's own default**, normally passed by the bundling theme's `mod.ts` rather than set here directly. A site overrides it via `themeConfig.accentColor`. Single value applies to both light and dark mode; a 2-item array sets them independently - light and dark may each use a different format. Each item is a preset name, or a raw color in `#hex` (3/4/6/8-digit), `rgb()`/`rgba()`, or `hsl()`/`hsla()` form (including the modern space-separated syntax, e.g. `hsl(210 80% 55% / 50%)`). |
 | `presets`     | `Record<string, string>`     | built-in table (`red`/`orange`/`yellow`/`green`/`blue`/`purple`) | Extra or overriding named presets.                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | `outputPath`  | `string`                     | `"accent-color.css"`                                             | Output filename under `<output>/assets/`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 
@@ -49,7 +49,7 @@ The plugin hooks into Steno's `afterBuild` stage, after every page has already b
    neither a known preset nor a recognized color format.
 3. Writes `<output>/assets/accent-color.css` with `:root { --accent: ...; }` for light mode and a
    `@media (prefers-color-scheme: dark)` block for dark mode, so the theme's own stylesheet just
-   references `var(--accent)` — no runtime resolution logic left in the theme's templates.
+   references `var(--accent)` - no runtime resolution logic left in the theme's templates.
 
 ### Bundling in a theme (no site-side `plugins:` entry)
 
@@ -74,7 +74,7 @@ const theme: StenoTheme = {
     accentColor: {
       type: "string", // becomes a union once core configSchema gets oneOf/anyOf support
       default: "blue",
-      description: "Preset name or a #hex/rgb()/hsl() color — see plugin-accent-color's README.",
+      description: "Preset name or a #hex/rgb()/hsl() color - see plugin-accent-color's README.",
     },
   },
   defaultConfig: { accentColor: "blue" },
